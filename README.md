@@ -1,4 +1,4 @@
-Create .env in backend with names:
+Create .env in backend folder with names:
 
 SECRET_KEY = ""
 ALGORITHM = ""
