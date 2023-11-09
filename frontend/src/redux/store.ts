@@ -3,7 +3,7 @@ import { useDispatch as useReduxDispatch } from 'react-redux';
 import { createSlice, combineReducers } from '@reduxjs/toolkit';
 import { apiSlice } from '../api/apiSlice';
 import authReducer from '../features/auth/authSlice';
-// Define your initial state here
+
 interface AppState {
     posts: any[];
     postStatus: { [postId: number]: "like" | "dislike" | null };
@@ -67,10 +67,10 @@ export const store = configureStore({
         getDefaultMiddleware().concat(apiSlice.middleware),
     devTools: true,
 });
-// Define RootState type
+
 export type RootState = ReturnType<typeof store.getState>;
 
-// Export action creators
+
 export const {
     setPosts,
     setPostStatus,
@@ -80,5 +80,5 @@ export const {
     clearUserData,
 } = appSlice.actions;
 
-// Create a custom hook for dispatch
+
 export const useAppDispatch = () => useReduxDispatch<Dispatch<AnyAction>>();

@@ -18,7 +18,6 @@ const Header = () => {
     }
 
 
-
     return (
         <header>
             <nav className=' h-20 px-20 bg-blue-500'>
