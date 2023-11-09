@@ -1,8 +1,6 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
-
 from pydantic import BaseModel
 from datetime import datetime
+
 
 class UserInfoResponse(BaseModel):
     username: str

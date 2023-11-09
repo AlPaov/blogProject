@@ -1,8 +1,5 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
 import asyncio
-from database.crud.user_crud import user_crud, User
-from logic.dtos.requests.user_requests import UpdateUsernameRequest, UpdateEmailRequest, UpdatePasswordRequest
+from database.crud.user_crud import user_crud
 from logic.services.hashing import Hasher
 hasher = Hasher();
 user_rep = user_crud()

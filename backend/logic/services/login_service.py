@@ -1,11 +1,9 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
 import asyncio
 from fastapi import HTTPException, status
 from database.crud.user_crud import user_crud
 from logic.dtos.requests.user_requests import UserLoginRequest
 from logic.services.hashing import Hasher
-from auth.jwt_handler import signJWT, decodeJWT
+from auth.jwt_handler import signJWT
 user_rep = user_crud()
 hash= Hasher()
 

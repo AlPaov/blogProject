@@ -33,7 +33,6 @@ class UserRegisterRequest(BaseModel):
             raise ValueError('Username can only contain letters, numbers, and underscores')
         return value
     
-
 class UserLoginRequest(BaseModel):
     login_or_email: str
     password: str
@@ -58,7 +57,6 @@ class UpdatePasswordRequest(BaseModel):
     id: int
     password: str
     new_password: str
-    
     
     @validator('new_password')
     def validate_password(cls, value):

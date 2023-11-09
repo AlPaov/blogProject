@@ -2,7 +2,6 @@ from pydantic import BaseModel, validator
 from datetime import datetime
 import re
 
-
 class post_grade_request(BaseModel):
     user_id: int
     post_id: int
@@ -20,10 +19,6 @@ class AddPostRequest(BaseModel):
     create_date: datetime
     creator_id: int | None
 
-class post_data_request(BaseModel):
-    user_id: int
-    subs: str | None = None
-    
 class UpdatePostRequest(BaseModel):
     id: int
     title: str

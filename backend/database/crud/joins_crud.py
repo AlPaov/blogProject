@@ -21,17 +21,3 @@ class joins_crud:
                 return result
             return None
         
-    # def get_users_subscribed_posts(self, user_id):
-    #     with session_scope() as session:
-    #         posts = session.query(Post)\
-    #                 .filter(Post.creator_id.in_(
-    #                 session.query(Subscription.follow_id)
-    #                 .filter(Subscription.user_id == user_id)
-    #                 )).all()
-    #         result = [{**post.__dict__} for post in posts]
-    #         if result:
-    #             return result
-    #         return None            
-            
-# test = joins_crud()    
-# print(test.get_users_subscribed_posts(6))

@@ -1,5 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
 import asyncio
 from database.crud.post_crud import post_crud
 from database.crud.comment_crud import comment_crud, Comment
@@ -7,6 +5,7 @@ from database.crud.comment_grades_crud import comment_grades_crud
 from logic.services.utils import util
 from logic.schemas.post_schema import PostAllInfo
 from logic.dtos.responses.comment_responses import CommentResponse
+
 
 posts_crud = post_crud()
 comments_crud = comment_crud()
@@ -55,17 +54,3 @@ class post_service():
     
     
     
-
-# # 
-# # get all info about current post         -      done still need create schema
-# # get all comments about current post      - dont still need create schema
-# # add comment         -     done
-# # like/dis comment     
-# # 
-# # 
-# # 
-# # 
-# # 
-# # 
-# # 
-# # 

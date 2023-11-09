@@ -1,7 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog')
-
-
 from fastapi import APIRouter, Depends
 from logic.services.post_service import post_service
 from logic.dtos.responses.post_responses import PostResponse
@@ -9,10 +5,12 @@ from logic.dtos.responses.comment_responses import CommentResponse
 from logic.dtos.requests.comment_requests import AddCommentRequest, LikeCommentRequest, UpdateCommentRequest
 from auth.jwt_bearer import jwtBearer
 
+
 router = APIRouter(
     prefix="/p/{post_id}",
     tags=['post'],
 )
+
 post_page = post_service()
 
 @router.get('/', response_model=PostResponse)

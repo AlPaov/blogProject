@@ -1,6 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
-
 from sqlalchemy import or_
 from database.models.models import User
 from database.connection import session_scope
@@ -10,11 +7,6 @@ import asyncio
 class user_crud:
     def __init__(self):
         self.loop = asyncio.get_event_loop()
-
-    
-    async def get_users(self):
-        async with session_scope() as session:
-            return session.query(User).all()
 
     async def get_username_by_id(self, id: int):
         async with session_scope() as session:
@@ -64,15 +56,6 @@ class user_crud:
                 return user
             return False
     
-    async def get_user_info_check(self, id, password):
-        async with session_scope() as session:
-            user = session.query(User)\
-                          .filter(User.id == id, User.password == password)\
-                          .first()
-            if user:
-                return True
-            return False
-    
     async def add_user(self, user: User):
         async with session_scope() as session:
             session.add(user)
@@ -84,22 +67,7 @@ class user_crud:
             user = session.query(User).filter(User.login == login).first() 
             if user:
                 return user
-            return False
-            
-    async def delete_user_by_id(self, id: int):
-        async with session_scope() as session:
-            user = session.query(User).get(id)
-            if user:
-                session.delete(user) 
-                return True
-            return False
-
-    async def update_user(self, updated_user: User):
-        async with session_scope() as session:
-            if session.query(User).filter(User.id == updated_user.id).first():
-                session.merge(updated_user)
-                return True
-            return False    
+            return False  
     
     async def update_user_password(self, updated_data: UpdatePasswordRequest):
         async with session_scope() as session:

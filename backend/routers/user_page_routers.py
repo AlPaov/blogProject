@@ -1,5 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
 from fastapi import APIRouter, Depends
 from logic.dtos.responses.post_responses import PostsResponse
 from logic.dtos.responses.comment_responses import CommentResponse
@@ -67,21 +65,3 @@ async def update_user_post(data: UpdatePostRequest):
 async def update_user_comment(data: UpdateCommentRequest):
     return await users_service.update_user_comment(data)
 
-
-
-
-# @router.get("/users/", tags=["users"])
-# def read_users():
-#     return [{"username": "Rick"}, {"username": "Morty"}]
-
-# @router.post("/users/register")
-# def register(login, password, mail, username):
-#     user = User(
-#                 login = login,
-#                 password = password,
-#                 mail = mail,
-#                 username = username,
-#                 register_date = datetime.datetime.now()
-#             )
-#     user1.add_user(user)
-#     return {'Success'}

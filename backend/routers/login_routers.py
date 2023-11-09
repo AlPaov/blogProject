@@ -1,11 +1,8 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
-
-
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 from logic.services.login_service import login_service
 from logic.dtos.requests.user_requests import UserLoginRequest
+
 
 router = APIRouter(
     prefix="/login",

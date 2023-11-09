@@ -1,5 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
 import asyncio
 from database.crud.post_crud import post_crud, Post
 from database.crud.post_grades_crud import post_grades_crud

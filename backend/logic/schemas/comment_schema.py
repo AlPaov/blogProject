@@ -1,12 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class Comment(BaseModel):
-    id: int
-    creator_id: int | None
-    post_id: int 
-    text: str
-    create_date: datetime
 
 class CommentAllInfo(BaseModel):
     id: int

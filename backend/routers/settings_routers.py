@@ -1,12 +1,10 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
-
-
 from fastapi import APIRouter, Depends
 from logic.services.settings_service import settings_service
 from logic.schemas.user_schema import UserBase
 from logic.dtos.requests.user_requests import UpdateEmailRequest, UpdatePasswordRequest, UpdateUsernameRequest
 from auth.jwt_bearer import jwtBearer
+
+
 router = APIRouter(
     prefix="/user/{user_id}/settings",
     tags=['settings'],
