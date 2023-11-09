@@ -5,8 +5,6 @@ import Cookies from 'js-cookie';
 import { useDispatch } from 'react-redux';
 import { logOut } from '../../features/auth/authSlice';
 
-
-
 const Header = () => {
     const current_user_id = useSelector(selectCurrentUser);
     const current_token = useSelector(selectCurrentToken);
@@ -16,7 +14,6 @@ const Header = () => {
         Cookies.remove('auth_token')
         dispatch(logOut())
     }
-
 
     return (
         <header>

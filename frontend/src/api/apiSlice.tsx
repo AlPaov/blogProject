@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { setCredentials, logOut } from '../features/auth/authSlice'
 import { RootState } from '../redux/store'
 const baseQuery = fetchBaseQuery({
     baseUrl: 'http://127.0.0.1:8000',
@@ -12,7 +11,6 @@ const baseQuery = fetchBaseQuery({
         return headers
     }
 })
-
 
 export const apiSlice = createApi({
     baseQuery: baseQuery,
