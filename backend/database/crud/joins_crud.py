@@ -1,6 +1,3 @@
-import sys
-sys.path.append('C:/Users/horrr/OneDrive/Рабочий стол/blog/backend')
-
 from database.models.models import Subscription, Post
 from database.connection import session_scope
 import asyncio
