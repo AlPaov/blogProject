@@ -15,16 +15,15 @@ export const useHttp = () => {
             }
 
             const response = await fetch(url, { method, body, headers });
-
-            if (!response.ok) {
-                throw new Error(`Could not fetch ${url}, status: ${response.status}`);
-            }
-
             const data = await response.json();
+            if (!response.ok) {
+                // throw new Error(`Could not fetch ${url}, status: ${response.status}, body: ${data.detail}`,);
+                throw { status: response.status, body: data.detail }
+            }
 
             return data;
         } catch (e) {
-            throw e;
+            throw e
         }
     };
 

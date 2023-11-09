@@ -7,7 +7,8 @@ from fastapi.responses import JSONResponse
 from logic.services.register_service import register_service
 from logic.dtos.requests.user_requests import UserRegisterRequest
 from database.crud.user_crud import user_crud
-from database.models.models import User
+
+
 
 router = APIRouter(
     prefix="/register",
